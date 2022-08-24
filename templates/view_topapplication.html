@@ -1,0 +1,66 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>TO DO</title>
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <link rel="shortcut icon" href="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="//use.fontawesome.com/releases/v5.11.2/css/all.css"
+    />
+    <link
+      rel="stylesheet"
+      href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <link
+      href="//fonts.googleapis.com/css?family=Poppins:100,300,400,500,600,700"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="{{ THEME_URL }}developers/css/proj.css" />
+
+    <script type="text/javascript">
+      var site_url = "{{BASE_URL}}";
+    </script>
+    <script type="text/javascript">
+      var resource_url = "{{THEME_URL}}";
+    </script>
+    <script src="//ajax.aspnetcdn.com/ajax/jquery/jquery-1.10.2.min.js"></script>
+    <script
+      src="//cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      .box-inner {
+        background: rgb(104, 201, 25);
+        margin: 2px;
+        width: 100%;
+      }
+
+      .container {
+        margin-top: 30px;
+        margin-left: 10px;
+        margin-right: 10px;
+        min-height: 450px !important;
+      }
+    
+    </style>
+  </head>
+  <body>
+    {% include "view_header.html" %} 
+    {% block pagecontent %} {% endblock %}
+    {%include "view_footer.html" %}
+  </body>
+</html>

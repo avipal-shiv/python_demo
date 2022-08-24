@@ -1,0 +1,98 @@
+{% extends "view_topapplication.html" %}
+
+{% block pagecontent %}
+
+<!-- top ends -->
+
+<div class="container">
+    <div class="register_box">
+        {% include 'message.html' %}
+        <div class="reg_header">
+            <h1 class="gray">Create Your Account </h1>
+        </div>
+
+        <div class="myform">
+            <form class="form-horizontal" role="form" action="{{ BASE_URL }}register/" method="POST">
+                {% csrf_token %}
+                <div class="">
+                    <div class="form-group row">
+                        <div class="col-12 font-weight-bold">
+                            <p class="sub_hed">Login Detail</p>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="control-label col-md-4 text-center" for="customer_name">User Name : <span
+                                class="red">*</span></label>
+                        <div class="col-md-6">{{ user_form.username }} <span class="red">
+                            {{ user_form.username.errors|striptags }}</span></div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="control-label col-md-4 text-center" for="email">Password : <span
+                                class="red">*</span></label>
+                        <div class="col-md-6">{{ user_form.password }} <span class="red">
+                            {{ user_form.password.errors|striptags }}</span></div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="control-label col-md-4 text-center" for="mobile_number">Confirm Password : <span
+                                class="red">*</span></label>
+                        <div class="col-md-6">{{ user_form.confirm_password }} <span class="red">
+                            {{ user_form.confirm_password.errors|striptags }}</span></div>
+                    </div>
+
+                    <div class="">
+                        <div class="form-group row">
+                            <div class="col-12 font-weight-bold">
+                                <p class="sub_hed">Personal Information</p>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label class="control-label col-md-4 text-center" for="customer_name">First Name : <span
+                                    class="red">*</span></label>
+                            <div class="col-md-6">{{ user_form.first_name }} <span class="red">
+                                {{ user_form.first_name.errors|striptags }}</span></div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="control-label col-md-4 text-center" for="email">Last Name : <span
+                                    class="red"></span></label>
+                            <div class="col-md-6">{{ user_form.last_name }} <span class="red">
+                                {{user_form.last_name.errors|striptags }}</span></div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label class="control-label col-md-4 text-center" for="customer_name">Email id : <span
+                                    class="red">*</span></label>
+                            <div class="col-md-6">{{ user_form.email }} <span class="red">
+                                {{user_form.email.errors|striptags }}</span></div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="control-label col-md-4 text-center" for="mobile_number">Mobile No. : <span
+                                    class="red">*</span></label>
+                            <div class="col-md-6">{{ reg_form.mobile }} <span class="red">
+                                {{user_form.mobile.errors|striptags }}</span></div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="control-label col-md-4 text-center" for="address">Address : <span
+                                    class="red">*</span></label>
+                            <div class="col-md-6">{{ reg_form.address }} <span class="red">
+                                {{ user_form.address.errors|striptags }}</span></div>
+                        </div>
+
+                        <div class="form-group row ">
+                            <div class="col-md-10 text-center">
+                                <input type="submit" name="submit" class="btn btn-info btn-md radius-3 col-2 "
+                                    value="Register">
+                            </div>
+                        </div>
+                    </div>
+
+            </form>
+        </div>
+    </div>
+    <div class="clearfix"></div>
+</div>
+
+
+{% endblock %}

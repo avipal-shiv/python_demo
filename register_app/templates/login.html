@@ -1,0 +1,43 @@
+{% extends "view_topapplication.html" %}
+
+{% block pagecontent %}
+<!-- top ends -->
+
+  <div class="container">
+    <div class="login_box">
+      {% include 'message.html' %}
+      <h1 class="fs20">Login</h1>
+      <div class="login_form mt10">
+        <form action="{{ BASE_URL }}login/" method="POST">
+          {% csrf_token %}
+          <div class="form_box1">
+            <p class="mt-2">
+              {{ form.username }}{{ form.username.errors }}
+            </p>
+            <p class="mt-2">
+              {{ form.password }}{{ form.password.errors }}
+            </p>
+            <p class="fs16 weight600 form-check mt-2">
+              <label class="">
+                <input type="checkbox" name="check" checked="" class="mr10"> <span class="label-text"> Keep Me Logged
+                  In</span>
+              </label>
+            </p>
+            <p class="mt-4">
+              <input name="button" type="submit" value="Login" class="mybtn trans_eff">
+            </p>
+            
+            <p class="mt-3 ttu fs14 or_ttl"><b class="bg-white">OR</b></p>
+            <p class="mt-3">
+              <input name="" type="button" value="Create New Account" class="mybtn2 trans_eff"
+                onClick="window.location.href=('{{ BASE_URL }}register')">
+            </p>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="clearfix"></div>
+  </div>
+
+
+{% endblock %}

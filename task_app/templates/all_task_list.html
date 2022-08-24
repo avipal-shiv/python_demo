@@ -1,0 +1,29 @@
+{% extends "view_topapplication.html" %}
+
+{% block pagecontent %}
+
+{% include 'message.html' %}
+
+<div class="container">
+    <div class="row text-primary bg-light">
+        <div class="col-sm-4">Title</div>
+        <div class="col-sm-4">Description</div>
+        
+    </div>
+    {% if listdata %}
+
+    {% for t in listdata %}
+    <div class="row mt-3">
+        <div class="col-sm-4">{{ t.title }}</div>
+        <div class="col-sm-4">{{ t.description }}</div>       
+      
+    </div>
+    {% endfor %}
+    <!--list-1-->
+    {% else %}
+    <div class="text-center red">Record not founds.</div>
+    {% endif %}
+    <div class="row mt-5"></div>
+</div>
+
+{% endblock %}

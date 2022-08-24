@@ -1,0 +1,41 @@
+{% extends "view_topapplication.html" %} 
+{% block pagecontent %} 
+{% include 'message.html' %}
+<div class="container">
+  <h1>Update Task</h1>
+
+  <div class="row contact_box">
+    <div class="col-12 col-md-5">
+      {% include 'message.html' %}
+      <h2 class="fs20"></h2>
+      <form action="" method="POST">
+        {% csrf_token %}
+        <div class="contact_form_cont">
+          <p class="gray fs16 mt-1">Just Fill the Below Information:</p>
+          <fieldset class="contact_form mt-2" style="border: none">
+            <div class="mt-1">
+              {{ form.title }}
+              <span class="red">{{ form.title.errors|striptags }}</span>
+            </div>
+
+            <div class="mt-1">
+              {{form.description}}
+              <span class="red">{{ form.description.errors|striptags }}</span>
+            </div>
+
+            <div class="mt-2">
+              <input
+                name="input"
+                type="submit"
+                value="Edit"
+                class="btn btn-info btn-md radius-3"
+              />
+            </div>
+          </fieldset>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  {% endblock %}
+</div>

@@ -1,0 +1,15 @@
+<div class="login_top">
+    <div class="container">
+    
+    <div class="logo2"><a href="{{ BASE_URL }}" title="Fast FuelC"><img src="{{ THEME_URL }}images/logo.png" class="" alt="Fast FuelC" title="Company Name"></a></div>
+    
+    <div class="login_right text-right pull-right hidden-xs">
+     {% if register_flag %}   
+    <p class="mt-2"><b class="white d-block mb5">Login To Your Account</b> <a href="{{ BASE_URL }}login" class="btn-default trans_eff radius-3 vam ml5">Login</a></p>
+     {%  else %}
+    <p><b class="white d-block mb5">Create your Account</b> <a href="{{ BASE_URL }}register" class="btn-default trans_eff radius-3 vam ml5">Register Here</a></p>
+      {% endif %}  
+</div>
+    <div class="clearfix"></div>
+    </div>
+    </div>

@@ -1,0 +1,31 @@
+{% extends "view_topapplication.html" %}
+
+{% block pagecontent %}
+
+{% include 'message.html' %}
+
+<div class="container">
+    <div  class="mp-3"><a href="{{ BASE_URL }}addtask" class="btn btn-primary">Add Task</a> </div>
+    <div class="row text-primary bg-light h-80">
+        <div class="col-sm-4">Title</div>
+        <div class="col-sm-4">Description</div>
+        <div class="col-sm-4">Action</div>
+    </div>
+    {% if listdata %}
+
+    {% for t in listdata %}
+    <div class="row mt-3">
+        <div class="col-sm-4">{{ t.title }}</div>
+        <div class="col-sm-4">{{ t.description }}</div>        
+        <div class="col-sm-4"><a href="{{ BASE_URL }}taskupdate/{{t.id}}" class="btn btn-primary">Edit</a> 
+        <a href="{{ BASE_URL }}taskdelete/{{t.id}}" class="btn btn-danger">Delete</a> </a></div>
+    </div>
+    {% endfor %}
+    <!--list-1-->
+    {% else %}
+    <div class="text-center red mt-5">Record not founds.</div>
+    {% endif %}
+    <div class="row mt-5"></div>
+</div>
+
+{% endblock %}
